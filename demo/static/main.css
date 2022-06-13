@@ -1,0 +1,121 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.icon {
+    fill: currentColor;
+}
+.icon--close {
+    width: 24px;
+    height: 24px;
+}
+.icon--cancel {
+    width: 11px;
+    height: 12px;
+}
+.icon--chevron-down {
+    width: 23px;
+    height: 14px;
+}
+.icon--checkmark {
+    width: 12px;
+    height: 10px;
+}
+
+.accordion__panel {
+    padding: 20px;
+    border-top: 1px solid #222222;
+}
+.accordion__panel:last-child {
+    border-bottom: 1px solid #222222;
+}
+.accordion__toggle {
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: left;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+}
+.accordion__title {
+    margin-bottom: 0;
+    line-height: 30px;
+}
+.accordion__title-inner {
+    display: block;
+    flex: 1;
+}
+.accordion__icon {
+    color: navy;
+    transform: rotate(360deg);
+    transition: transform 0.25s ease-out;
+    margin-left: 10px;
+}
+.accordion__toggle[aria-pressed="true"] .accordion__icon {
+    transform: rotate(180deg);
+}
+.accordion__content {
+    line-height: 1.25;
+    max-width: 768px;
+    padding-bottom: 5px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field--errors {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px dotted #f00;
+}
+
+.field__required {
+    color: #f00;
+}
+.field__label,
+.field__label--multiple {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.field__errors {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #f00;
+}
+.field__help {
+    margin-top: 5px;
+}
+.field input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.field textarea,
+.field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #141414;
+}
+
+.field select:not([multiple]) {
+    background-color: #fff;
+    padding: 0.5em 3.5em 0.5em 1em;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #444 50%),
+        linear-gradient(135deg, #444 50%, transparent 50%),
+        linear-gradient(to right, rgba(20, 20, 20, 0.2), rgba(20, 20, 20, 0.2));
+    background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+}
