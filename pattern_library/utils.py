@@ -233,21 +233,22 @@ def get_template_ancestors(template_name, context=None, ancestors=None):
     and followed by the names of any templates that extends until
     the most extended template is reached.
     """
-    if ancestors is None:
-        ancestors = [template_name]
+    # if ancestors is None:
+    #     ancestors = [template_name]
 
-    if context is None:
-        context = Context()
+    # if context is None:
+    #     context = Context()
 
-    pattern_template = get_template(template_name)
+    # pattern_template = get_template(template_name)
 
-    for node in pattern_template.template.nodelist:
-        if isinstance(node, ExtendsNode):
-            parent_template_name = node.parent_name.resolve(context)
-            ancestors.append(parent_template_name)
-            get_template_ancestors(
-                parent_template_name, context=context, ancestors=ancestors
-            )
-            break
+    # for node in pattern_template.template.nodelist:
+    #     if isinstance(node, ExtendsNode):
+    #         parent_template_name = node.parent_name.resolve(context)
+    #         ancestors.append(parent_template_name)
+    #         get_template_ancestors(
+    #             parent_template_name, context=context, ancestors=ancestors
+    #         )
+    #         break
 
-    return ancestors
+    # return ancestors
+    return [template_name]

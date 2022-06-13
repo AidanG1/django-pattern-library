@@ -67,7 +67,9 @@ class IndexView(TemplateView):
         context = self.get_context_data()
         context["pattern_templates"] = templates
         context["pattern_template_name"] = pattern_template_name
-        context["pattern_source"] = escape(template.template.source)
+        f = open(template.template.filename)
+        context["pattern_source"] = escape(f.read())
+        # context["pattern_source"] = escape(template.template.source)
         context["pattern_config"] = escape(
             get_pattern_config_str(pattern_template_name)
         )
